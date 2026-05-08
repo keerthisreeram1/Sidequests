@@ -2,15 +2,16 @@ import { useState } from 'react'
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase'
 import { useAuth } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 import Filters from '../components/Filters'
 import QuestCard from '../components/QuestCard'
 
 export default function Home() {
   const { user } = useAuth()
+  const navigate = useNavigate()
   const [quests, setQuests] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [location, setLocation] = useState(null)
   const [locationName, setLocationName] = useState('')
   const [filters, setFilters] = useState({
     budget: 20,
@@ -38,9 +39,7 @@ export default function Home() {
       const pos = await getLocation()
       const lat = pos.coords.latitude
       const lon = pos.coords.longitude
-      setLocation({ lat, lon })
 
-      // Reverse geocode for city name
       const geoRes = await fetch(
         `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
       )
@@ -115,6 +114,7 @@ Return JSON array only. Example format:
         </div>
         <div className="top-bar-right">
           <span className="user-name">{user?.displayName || user?.email}</span>
+          <button className="btn-ghost" onClick={() => navigate('/saved')}>★ My Quests</button>
           <button className="btn-ghost" onClick={() => signOut(auth)}>Sign out</button>
         </div>
       </header>

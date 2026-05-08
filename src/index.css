@@ -376,3 +376,173 @@ body {
   .hero-title { font-size: 36px; }
   .quests-grid { display: grid; grid-template-columns: 1fr 1fr; }
 }
+
+.detail-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 20px 48px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.detail-hero {
+  margin-bottom: 16px;
+}
+
+.detail-emoji { font-size: 40px; display: block; margin-bottom: 12px; }
+
+.detail-title {
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.detail-meta { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
+
+.detail-desc {
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-directions {
+  display: block;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 11px 20px;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: border-color 0.15s;
+}
+
+.btn-directions:hover { border-color: #444; }
+
+.btn-save {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  border-radius: var(--radius);
+  padding: 7px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.15s;
+}
+
+.btn-save:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-saved {
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: var(--radius);
+  padding: 7px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.journal-section {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+.journal-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+
+.save-hint {
+  text-align: center;
+  color: var(--text-3);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.points-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.points-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.points-emoji { font-size: 28px; }
+
+.points-level {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.points-sub {
+  font-size: 12px;
+  color: var(--accent);
+  margin: 0;
+}
+
+.points-bar-wrap {
+  background: var(--bg);
+  border-radius: 20px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.points-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.btn-done {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.15s;
+}
+
+.btn-done.active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.saved-card.completed {
+  opacity: 0.6;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 0;
+  color: var(--text-2);
+}
